@@ -5,20 +5,18 @@ import com.company.Armor_category.Helms.Leather_Helm;
 import com.company.Armor_category.Legs.Leather_LegGuards;
 import com.company.Armor_category.Torso.Leather_bodyArmor;
 import com.company.Base_classes.Armor_package.Soldier_Armor_Set;
-import com.company.Base_classes.Ranged_Soldier;
-import com.company.Base_classes.Weapon;
+import com.company.Base_classes.Arsenal;
+import com.company.Base_classes.Ranged_Soldier;;
 import com.company.Soldiers.Rank_enum;
 import com.company.Weapon.Ranged_Weapon.Bow;
 
 
-import java.util.ArrayList;
-
 public class Bowman extends Ranged_Soldier {
     protected Soldier_Armor_Set leather_armor_set;
+
     public Bowman(String name) {
-        super(Rank_enum.PEASANT, name, new ArrayList<Weapon>());
-        this.arsenal.add(new Bow());
-        this.active_weapon_index = 0;
+        super(Rank_enum.PEASANT, name);
+        this.arsenal.add_weapon(new Bow());
 
         this.leather_armor_set = new Soldier_Armor_Set();
         this.leather_armor_set.initializeInstance(new Leather_Helm(), new Leather_Armguards(),

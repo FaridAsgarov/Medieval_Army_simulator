@@ -6,16 +6,16 @@ import com.company.Soldiers.Rank_enum;
 import com.company.Weapon.Melee_Weapons.Spear;
 import com.company.Weapon.Melee_Weapons.Sword;
 
-import java.util.ArrayList;
+
 import java.util.Random;
 
 public class Spearman extends Soldier {
 
     public Spearman(String name) {
-        super(Rank_enum.PEASANT, name, new ArrayList<Weapon>(), null,100);
-        this.arsenal.add(new Spear());
-        this.arsenal.add(new Sword());
-        this.active_weapon_index = 0;
+        super(Rank_enum.PEASANT, name, null,100);
+        this.arsenal.add_weapon(new Spear());
+        this.arsenal.add_weapon(new Sword());
+        this.arsenal.setActive_weapon_index(0);
     }
 
     @Override
@@ -35,7 +35,7 @@ public class Spearman extends Soldier {
 
     public String throw_spear() {
         String result;
-        if (this.arsenal.get(this.active_weapon_index).getClass().getName().equals(Spear.class.getName())) {
+        if (this.arsenal.get_active_weapon().getClass().getName().equals(Spear.class.getName())) {
             int min = 0;
             int max = 100;
             int diff = max - min;
@@ -48,15 +48,10 @@ public class Spearman extends Soldier {
             } else {
                 result = "Succesfully threw the Spear at the target";
             }
-            this.arsenal.remove(active_weapon_index);
+            this.arsenal.remove_weapon();
         }
         else {
-            boolean isExist = false;
-            for(Weapon item : this.arsenal){
-                if(item.getClass().getName().equals(Spear.class.getName()))
-                    isExist = true;
-            }
-            if(isExist)
+            if((arsenal.search_weapon_in_arsenal(new Spear())) == false)
                 result = "No spear is not selected";
             else
                 result = "No spear to throw";

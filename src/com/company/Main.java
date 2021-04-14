@@ -1,5 +1,6 @@
 package com.company;
 
+import com.company.Soldiers.Melee_Soldiers.Spearman;
 import com.company.Soldiers.Melee_Soldiers.Swordsman;
 import com.company.Soldiers.Ranged_Soldiers.Bowman;
 
@@ -23,11 +24,24 @@ public class Main {
 //        System.out.println(eng_sq.Squad_Raise_Shields());
 //        System.out.println(eng_sq.Squad_defend());
 
-          Swordsman kenshi = new Swordsman("Kenshi");
-          System.out.println(kenshi.toString());
+//          Swordsman kenshi = new Swordsman("Kenshi");
+//          System.out.println(kenshi.toString());
 
           Bowman legolas = new Bowman("Legolas");
-          System.out.println(legolas.toString());
+          System.out.println(legolas.reload());
+          for(int i=0;i<12;i++){System.out.println(legolas.attack());}
+          System.out.println(legolas.defend());
+
+          for(int i=0;i<12;i++){System.out.println(legolas.attack());}
+          System.out.println();
+
+          Spearman spear_thrower = new Spearman("Spear thrower");
+            System.out.println(spear_thrower.attack());
+            System.out.println(spear_thrower.throw_spear());
+            System.out.println(spear_thrower.attack());
+            System.out.println(spear_thrower.throw_spear());
+            System.out.println(spear_thrower.defend());
+//          System.out.println(legolas.toString());
 
 //
 //        French_Squad fre_sq = new French_Squad();
