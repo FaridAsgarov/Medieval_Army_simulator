@@ -7,7 +7,7 @@ import com.company.Soldiers.Ranged_Soldiers.Bowman;
 public class Main {
 
     public static void main(String[] args) {
-
+//Creating instance of Bowman class
           Bowman legolas = new Bowman("Legolas");
           System.out.println(legolas.reload());
           for(int i=0;i<12;i++){System.out.println(legolas.attack());}
@@ -15,7 +15,7 @@ public class Main {
 
           for(int i=0;i<12;i++){System.out.println(legolas.attack());}
           System.out.println();
-
+//Creating instance of Spearman class
           Spearman spear_thrower = new Spearman("Spear thrower");
             System.out.println(spear_thrower.attack());
             System.out.println(spear_thrower.throw_spear());
