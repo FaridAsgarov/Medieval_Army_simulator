@@ -11,7 +11,10 @@ public class Crossbowman extends RangedSoldier {
 
     public Crossbowman(String name) {
         super(Rank.KNIGHT, name);
-        this.arsenal.add_weapon(new Crossbow());
+
+        Crossbow crossbow = new Crossbow();
+        this.arsenal.addWeapon(crossbow);
+        this.arsenal.setActiveWeapon(crossbow);
     }
 
     @Override

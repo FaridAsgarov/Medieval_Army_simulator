@@ -9,7 +9,6 @@ public class DistanceWeapon extends Weapon {
     public DistanceWeapon(int max_arrow_num, double weight_kg, int length_cm, int reload_time_secs, int miss_chance){
         super(WeaponRange.VERY_LONG_RANGE, weight_kg, length_cm );
         this.max_arrow_num = max_arrow_num;
-        this.arrow_num = arrow_num;
         this.reload_time_secs = reload_time_secs;
         this.miss_chance = miss_chance;
     }

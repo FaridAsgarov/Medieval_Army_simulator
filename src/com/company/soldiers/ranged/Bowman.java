@@ -15,7 +15,10 @@ public class Bowman extends RangedSoldier {
 
     public Bowman(String name) {
         super(Rank.PEASANT, name);
-        this.arsenal.add_weapon(new Bow());
+
+        Bow bow = new Bow();
+        this.arsenal.addWeapon(bow);
+        this.arsenal.setActiveWeapon(bow);
 
         this.leather_armor_set = new SoldierArmorSet();
         this.leather_armor_set.initializeInstance(new LeatherHelm(), new LeatherArmguards(),

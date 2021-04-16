@@ -27,12 +27,12 @@ public class RangedSoldier extends Soldier {
 
 
     public String reload(){
-        if(this.arsenal.get_active_weapon() instanceof DistanceWeapon){
-            ((DistanceWeapon)arsenal.get_active_weapon()).reload();
-            if (this.arsenal.get_active_weapon() instanceof Bow) {
+        if(this.arsenal.getActiveWeapon() instanceof DistanceWeapon){
+            ((DistanceWeapon)arsenal.getActiveWeapon()).reload();
+            if (this.arsenal.getActiveWeapon() instanceof Bow) {
                 return "reloaded the Bow in hand";
             }
-            else if (this.arsenal.get_active_weapon() instanceof Crossbow)
+            else if (this.arsenal.getActiveWeapon() instanceof Crossbow)
             {
                 return "reloaded the Crossbow in hand";
             }

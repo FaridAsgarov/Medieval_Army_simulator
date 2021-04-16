@@ -31,7 +31,7 @@ public class Soldier {
                           result = this.shield.defend_shield();
                       }
                       else {
-                          result = arsenal.get_active_weapon().defend();
+                          result = arsenal.getActiveWeapon().defend();
                       }
               } catch (Exception ex){
                         result = "Impossible to defend with this type of a weapon";
@@ -40,15 +40,8 @@ public class Soldier {
         }
 
       public String attack(){
-              return arsenal.get_active_weapon().attack();
+              return arsenal.getActiveWeapon().attack();
       }
 
-      public Weapon next_weapon(){
-          return arsenal.next_weapon();
-      }
-
-      public Weapon previous_weapon(){
-          return arsenal.previous_weapon();
-      }
 
 }

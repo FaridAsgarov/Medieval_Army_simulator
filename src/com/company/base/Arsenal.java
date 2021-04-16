@@ -3,13 +3,11 @@ package com.company.base;
 import java.util.ArrayList;
 
 public class Arsenal {
-    protected int active_weapon_index;
+    protected Weapon activeWeapon;
     public ArrayList<Weapon> arsenal;
 
     public Arsenal(){
-    this.active_weapon_index = active_weapon_index;
-
-    this.arsenal = new ArrayList<Weapon>();
+    this.arsenal = new ArrayList<>();
     }
 
     @Override
@@ -21,61 +19,45 @@ public class Arsenal {
         return cur_arsenal;
     }
 
-    public void add_weapon(Weapon weapon){
+    public void addWeapon(Weapon weapon){
         this.arsenal.add(weapon);
     }
-    public void remove_weapon(){
-        this.arsenal.remove(active_weapon_index);
+    public void removeActiveWeapon(){
+        ////removing current weapon
+        this.arsenal.remove(arsenal.indexOf(activeWeapon));
+        // checking if another weapon is available in the arsenal
+        for (Weapon item : arsenal) {
+            if(item != null){
+                setActiveWeapon(item);
+            }
+        }
     }
 
-    public void setActive_weapon_index(int active_weapon_index) {
-        this.active_weapon_index = active_weapon_index;
+    public void setActiveWeapon(Weapon activeWeapon) {
+        this.activeWeapon = activeWeapon;
     }
 
-    public Weapon get_active_weapon(){
-        if (active_weapon_index>=0 && active_weapon_index < arsenal.size())
+    public Weapon getActiveWeapon(){
+        if (activeWeapon != null)
             {
-                return this.arsenal.get(active_weapon_index);
+                return this.activeWeapon;
             }
             else
             {
-                throw new java.lang.UnsupportedOperationException("Index can not be negative or out of bounds.");
+                throw new java.lang.UnsupportedOperationException("no active weapon equipped");
             }
         }
 
-    public boolean search_weapon_in_arsenal(Weapon weapon) {
-       boolean isExist = false;
-
-        for (Weapon item : arsenal) {
-            if (item.equals(weapon)) {
-                isExist = true;
-                break;
+    public boolean containsType(Class clazz) {
+        for (Weapon weapon : arsenal) {
+            if(weapon.getClass() == clazz) {
+                return true;
             }
         }
-            return isExist;
+        return false;
     }
 
-    public Weapon next_weapon() {
-        if (active_weapon_index>=0 && active_weapon_index < arsenal.size())
-        {
-            return this.arsenal.get(++active_weapon_index);
-        }
-        else
-        {
-            throw new java.lang.UnsupportedOperationException("Index can not be negative or out of bounds.");
-        }
-    }
 
-    public Weapon previous_weapon() {
-        if (active_weapon_index>=0 && active_weapon_index < arsenal.size())
-        {
-            return this.arsenal.get(--active_weapon_index);
-        }
-        else
-        {
-            throw new java.lang.UnsupportedOperationException("Index can not be negative or out of bounds.");
-        }
-    }
 
 }
 

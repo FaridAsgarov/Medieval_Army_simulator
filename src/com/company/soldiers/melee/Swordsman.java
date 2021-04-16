@@ -15,8 +15,9 @@ public class Swordsman extends Soldier {
     protected SoldierArmorSet chainmail_armor_set;
     public Swordsman(String name) {
         super(Rank.KNIGHT, name, new Shield(50,10),100);
-        this.arsenal.add_weapon(new Sword());
-
+        Sword sword = new Sword();
+        this.arsenal.addWeapon(sword);
+        this.arsenal.setActiveWeapon(sword);
 
         this.chainmail_armor_set = new SoldierArmorSet();
         this.chainmail_armor_set.initializeInstance(new ChainmailHelm(), new СhainmailArmguards(),

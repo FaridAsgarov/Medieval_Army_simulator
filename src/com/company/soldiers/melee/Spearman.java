@@ -12,9 +12,10 @@ public class Spearman extends Soldier {
 
     public Spearman(String name) {
         super(Rank.PEASANT, name, null,100);
-        this.arsenal.add_weapon(new Spear());
-        this.arsenal.add_weapon(new Sword());
-        this.arsenal.setActive_weapon_index(0);
+        Spear spear = new Spear();
+        this.arsenal.addWeapon(spear);
+        this.arsenal.addWeapon(new Sword());
+        this.arsenal.setActiveWeapon(spear);
     }
 
     @Override
@@ -34,7 +35,7 @@ public class Spearman extends Soldier {
 
     public String throw_spear() {
         String result;
-        if (this.arsenal.get_active_weapon().getClass().getName().equals(Spear.class.getName())) {
+        if (this.arsenal.getActiveWeapon().getClass().getName().equals(Spear.class.getName())) {
             int min = 0;
             int max = 100;
             int diff = max - min;
@@ -47,10 +48,10 @@ public class Spearman extends Soldier {
             } else {
                 result = "Succesfully threw the Spear at the target";
             }
-            this.arsenal.remove_weapon();
+            this.arsenal.removeActiveWeapon();
         }
         else {
-            if((arsenal.search_weapon_in_arsenal(new Spear())) == false)
+            if(arsenal.containsType(Spear.class))
                 result = "Spear is not selected";
             else
                 result = "No spear to throw";
