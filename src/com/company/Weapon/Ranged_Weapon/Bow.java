@@ -8,7 +8,7 @@ import java.util.Random;
 public class Bow extends Distance_Weapon {
 
     public Bow() {
-        super(10,
+        super(1,
                 2.26,
                 156,
                 3,
@@ -34,14 +34,9 @@ public class Bow extends Distance_Weapon {
             }
         }
         else{
-            result = "Failed to shoot the Bow because there are no arrows";
+            result = "Failed to shoot the Bow because there are no arrows loaded into the Bow";
         }
         return result;
     }
 
-    @Override
-    public int reload() {
-        this.arrow_num = this.max_arrow_num;
-        return this.reload_time_secs;
-    }
 }

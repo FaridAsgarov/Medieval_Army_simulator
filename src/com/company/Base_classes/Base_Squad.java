@@ -1,8 +1,5 @@
 package com.company.Base_classes;
 
-import com.company.Soldiers.Melee_Soldiers.Spearman;
-import com.company.Soldiers.Melee_Soldiers.Swordsman;
-
 import java.util.ArrayList;
 
 public class Base_Squad {
@@ -57,18 +54,17 @@ public class Base_Squad {
         return b;
     }
 
-    public int Squad_reload_ranged_weapons() {
-        int reload_time = 0;
-        int max_reload_time = 0;
+    public String Squad_reload_ranged_weapons(){
+        String tmp = "";
         for (Soldier soldier : squad) {
             if (soldier instanceof Ranged_Soldier) {
-                reload_time = ((Ranged_Soldier) soldier).reload();
-                if (reload_time > max_reload_time) {
-                    max_reload_time = reload_time;
-                }
+                tmp += ((Ranged_Soldier)soldier).reload() + "\n";
             }
         }
-        return max_reload_time;
+            if(tmp == ""){
+                tmp = "Nothing to reload because there are no Ranged Soldier in the squad";
+            }
+            return tmp;
     }
 
     public String Squad_Raise_Shields() {

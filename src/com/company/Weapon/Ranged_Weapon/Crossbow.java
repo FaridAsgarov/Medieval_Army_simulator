@@ -8,7 +8,7 @@ import java.util.Random;
 public class Crossbow extends Distance_Weapon {
 
     public Crossbow() {
-        super(10, 2.26, 50, 5,10);
+        super(1, 2.26, 50, 5,10);
     }
 
     @Override
@@ -30,14 +30,9 @@ public class Crossbow extends Distance_Weapon {
             }
         }
         else{
-            result = "Failed to shoot the Crossbow because there are no arrows";
+            result = "Failed to shoot the Crossbow because there are no arrows loaded into the Crossbow";
         }
         return result;
     }
 
-    @Override
-    public int reload() {
-        this.arrow_num = this.max_arrow_num;
-        return this.reload_time_secs;
-    }
 }

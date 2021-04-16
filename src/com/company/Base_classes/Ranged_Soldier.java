@@ -1,7 +1,8 @@
 package com.company.Base_classes;
 
 import com.company.Soldiers.Rank_enum;
-
+import com.company.Weapon.Ranged_Weapon.Bow;
+import com.company.Weapon.Ranged_Weapon.Crossbow;
 
 public class Ranged_Soldier extends Soldier {
 
@@ -11,7 +12,7 @@ public class Ranged_Soldier extends Soldier {
 
     @Override
     public String toString() {
-        return "rank: " + this.rank + ",name: " + this.name + ",arsenal: " + arsenal.toString() + "Health Points remaining:" + healthPoints + "HP";
+        return "rank: " + this.rank + ", name: " + this.name + ", arsenal: " + arsenal.toString() + ", Health Points remaining:" + healthPoints + "HP";
     }
 
     @Override
@@ -24,11 +25,20 @@ public class Ranged_Soldier extends Soldier {
         return super.attack();
     }
 
-    protected int reload(){
+
+    public String reload(){
         if(this.arsenal.get_active_weapon() instanceof Distance_Weapon){
-            return ((Distance_Weapon)arsenal.get_active_weapon()).reload();
+            ((Distance_Weapon)arsenal.get_active_weapon()).reload();
+            if (this.arsenal.get_active_weapon() instanceof Bow) {
+                return "reloaded the Bow in hand";
+            }
+            else if (this.arsenal.get_active_weapon() instanceof Crossbow)
+            {
+                return "reloaded the Crossbow in hand";
+            }
+            return "reloaded current ranged weapon";
         }
-        return -1;
+        return "no ranged weapon in hand to reload";
     }
 
 }

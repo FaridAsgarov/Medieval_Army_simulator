@@ -52,7 +52,7 @@ public class Spearman extends Soldier {
         }
         else {
             if((arsenal.search_weapon_in_arsenal(new Spear())) == false)
-                result = "No spear is not selected";
+                result = "Spear is not selected";
             else
                 result = "No spear to throw";
         }
