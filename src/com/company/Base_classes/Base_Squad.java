@@ -54,19 +54,18 @@ public class Base_Squad {
         return b;
     }
 
-//    public int Squad_reload_ranged_weapons() {
-//        int reload_time = 0;
-//        int max_reload_time = 0;
-//        for (Soldier soldier : squad) {
-//            if (soldier instanceof Ranged_Soldier) {
-//                reload_time = ((Ranged_Soldier) soldier).reload();
-//                if (reload_time > max_reload_time) {
-//                    max_reload_time = reload_time;
-//                }
-//            }
-//        }
-//        return max_reload_time;
-//    }
+    public String Squad_reload_ranged_weapons(){
+        String tmp = "";
+        for (Soldier soldier : squad) {
+            if (soldier instanceof Ranged_Soldier) {
+                tmp += ((Ranged_Soldier)soldier).reload() + "\n";
+            }
+        }
+            if(tmp == ""){
+                tmp = "Nothing to reload because there are no Ranged Soldier in the squad";
+            }
+            return tmp;
+    }
 
     public String Squad_Raise_Shields() {
         String soldiers_with_shields = " ";

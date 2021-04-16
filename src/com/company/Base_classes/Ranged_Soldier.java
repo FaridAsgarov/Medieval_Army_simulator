@@ -12,7 +12,7 @@ public class Ranged_Soldier extends Soldier {
 
     @Override
     public String toString() {
-        return "rank: " + this.rank + ",name: " + this.name + ",arsenal: " + arsenal.toString() + "Health Points remaining:" + healthPoints + "HP";
+        return "rank: " + this.rank + ", name: " + this.name + ", arsenal: " + arsenal.toString() + ", Health Points remaining:" + healthPoints + "HP";
     }
 
     @Override

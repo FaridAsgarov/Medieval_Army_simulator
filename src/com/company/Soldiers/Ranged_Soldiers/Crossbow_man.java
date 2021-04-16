@@ -25,5 +25,4 @@ public class Crossbow_man extends Ranged_Soldier {
     }
 
 
-
 }

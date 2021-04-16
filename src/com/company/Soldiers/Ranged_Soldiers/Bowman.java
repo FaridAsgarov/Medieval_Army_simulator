@@ -7,7 +7,7 @@ import com.company.Armor_category.Torso.Leather_bodyArmor;
 import com.company.Base_classes.Armor_package.Soldier_Armor_Set;
 import com.company.Base_classes.Arsenal;
 import com.company.Base_classes.Distance_Weapon;
-import com.company.Base_classes.Ranged_Soldier;;
+import com.company.Base_classes.Ranged_Soldier;
 import com.company.Soldiers.Rank_enum;
 import com.company.Weapon.Ranged_Weapon.Bow;
 

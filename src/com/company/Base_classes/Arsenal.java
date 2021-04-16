@@ -14,7 +14,7 @@ public class Arsenal {
 
     @Override
     public String toString() {
-        String cur_arsenal = " ";
+        String cur_arsenal = "";
         for (Weapon item : arsenal) {
             cur_arsenal += item.toString() + " ";
         }
@@ -52,8 +52,7 @@ public class Arsenal {
                 break;
             }
         }
-
-       return isExist;
+            return isExist;
     }
 
 }
