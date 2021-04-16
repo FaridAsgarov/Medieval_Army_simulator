@@ -1,7 +1,8 @@
 package com.company.Base_classes;
 
 import com.company.Soldiers.Rank_enum;
-import com.company.Base_classes.Distance_Weapon;
+import com.company.Weapon.Ranged_Weapon.Bow;
+import com.company.Weapon.Ranged_Weapon.Crossbow;
 
 public class Ranged_Soldier extends Soldier {
 
@@ -28,6 +29,13 @@ public class Ranged_Soldier extends Soldier {
     public String reload(){
         if(this.arsenal.get_active_weapon() instanceof Distance_Weapon){
             ((Distance_Weapon)arsenal.get_active_weapon()).reload();
+            if (this.arsenal.get_active_weapon() instanceof Bow) {
+                return "reloaded the Bow in hand";
+            }
+            else if (this.arsenal.get_active_weapon() instanceof Crossbow)
+            {
+                return "reloaded the Crossbow in hand";
+            }
             return "reloaded current ranged weapon";
         }
         return "no ranged weapon in hand to reload";
