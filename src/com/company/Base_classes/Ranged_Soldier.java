@@ -1,7 +1,7 @@
 package com.company.Base_classes;
 
 import com.company.Soldiers.Rank_enum;
-
+import com.company.Base_classes.Distance_Weapon;
 
 public class Ranged_Soldier extends Soldier {
 
@@ -24,11 +24,13 @@ public class Ranged_Soldier extends Soldier {
         return super.attack();
     }
 
-    protected int reload(){
+
+    public String reload(){
         if(this.arsenal.get_active_weapon() instanceof Distance_Weapon){
-            return ((Distance_Weapon)arsenal.get_active_weapon()).reload();
+            ((Distance_Weapon)arsenal.get_active_weapon()).reload();
+            return "reloaded current ranged weapon";
         }
-        return -1;
+        return "no ranged weapon in hand to reload";
     }
 
 }

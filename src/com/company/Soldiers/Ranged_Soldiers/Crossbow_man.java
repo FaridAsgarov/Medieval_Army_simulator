@@ -24,9 +24,6 @@ public class Crossbow_man extends Ranged_Soldier {
         return super.attack();
     }
 
-    @Override
-    public int reload() {
-        return super.reload();
-    }
+
 
 }

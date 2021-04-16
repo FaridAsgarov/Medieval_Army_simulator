@@ -16,7 +16,7 @@ public class Distance_Weapon extends Weapon {
 
     @Override
     public String toString() {
-        return super.toString() + ",has max of " + this.max_arrow_num + " arrows, and has reload time of " + this.reload_time_secs;
+        return super.toString() + ",has max of " + this.max_arrow_num + " arrows, reloading it takes " + this.reload_time_secs + " secs";
     }
 
     @Override
@@ -29,9 +29,9 @@ public class Distance_Weapon extends Weapon {
         throw new java.lang.UnsupportedOperationException("Can not defend with distance weapon.");
     }
 
-    public int reload(){
+    public String reload(){
         this.arrow_num = this.max_arrow_num;
-        return this.reload_time_secs;
+        return "reloaded ranged weapon, it took " + this.reload_time_secs + " secs";
     }
 }
 

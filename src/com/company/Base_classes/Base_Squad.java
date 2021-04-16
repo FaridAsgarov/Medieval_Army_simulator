@@ -1,8 +1,5 @@
 package com.company.Base_classes;
 
-import com.company.Soldiers.Melee_Soldiers.Spearman;
-import com.company.Soldiers.Melee_Soldiers.Swordsman;
-
 import java.util.ArrayList;
 
 public class Base_Squad {
@@ -57,19 +54,19 @@ public class Base_Squad {
         return b;
     }
 
-    public int Squad_reload_ranged_weapons() {
-        int reload_time = 0;
-        int max_reload_time = 0;
-        for (Soldier soldier : squad) {
-            if (soldier instanceof Ranged_Soldier) {
-                reload_time = ((Ranged_Soldier) soldier).reload();
-                if (reload_time > max_reload_time) {
-                    max_reload_time = reload_time;
-                }
-            }
-        }
-        return max_reload_time;
-    }
+//    public int Squad_reload_ranged_weapons() {
+//        int reload_time = 0;
+//        int max_reload_time = 0;
+//        for (Soldier soldier : squad) {
+//            if (soldier instanceof Ranged_Soldier) {
+//                reload_time = ((Ranged_Soldier) soldier).reload();
+//                if (reload_time > max_reload_time) {
+//                    max_reload_time = reload_time;
+//                }
+//            }
+//        }
+//        return max_reload_time;
+//    }
 
     public String Squad_Raise_Shields() {
         String soldiers_with_shields = " ";

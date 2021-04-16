@@ -35,9 +35,4 @@ public class Crossbow extends Distance_Weapon {
         return result;
     }
 
-    @Override
-    public int reload() {
-        this.arrow_num = this.max_arrow_num;
-        return this.reload_time_secs;
-    }
 }
