@@ -4,6 +4,7 @@ import com.company.armor_category.arms.LeatherArmguards;
 import com.company.armor_category.helms.LeatherHelm;
 import com.company.armor_category.legs.LeatherLegGuards;
 import com.company.armor_category.torso.LeatherBodyArmor;
+import com.company.base.Soldier;
 import com.company.base.armors.SoldierArmorSet;
 import com.company.base.RangedSoldier;
 import com.company.soldiers.Rank;
@@ -11,7 +12,6 @@ import com.company.weapons.ranged.Bow;
 
 
 public class Bowman extends RangedSoldier {
-    protected SoldierArmorSet leather_armor_set;
 
     public Bowman(String name) {
         super(Rank.PEASANT, name);
@@ -20,8 +20,7 @@ public class Bowman extends RangedSoldier {
         this.arsenal.addWeapon(bow);
         this.arsenal.setActiveWeapon(bow);
 
-        this.leather_armor_set = new SoldierArmorSet();
-        this.leather_armor_set.initializeInstance(new LeatherHelm(), new LeatherArmguards(),
+        this.soldierArmorSet.initializeInstance(new LeatherHelm(), new LeatherArmguards(),
                 new LeatherLegGuards(), new LeatherBodyArmor());
     }
 
@@ -31,13 +30,13 @@ public class Bowman extends RangedSoldier {
     }
 
     @Override
-    public String attack() {
-        return super.attack();
+    public String attack(Soldier enemy) {
+        return super.attack(enemy);
     }
 
     @Override
     public String toString() {
-        return "Bowman " + this.name + " has armor of: " + leather_armor_set.toString();
+        return "Bowman " + this.name + " has armor of: " + this.soldierArmorSet.toString();
     }
 
 }

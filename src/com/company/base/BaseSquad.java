@@ -38,10 +38,10 @@ public class BaseSquad {
     }
 
 
-    public String Squad_attack() {
+    public String Squad_attack(Soldier enemy) {
         String b = " ";
         for (Soldier soldier : squad) {
-            b += soldier.attack() + "\n";
+            b += soldier.attack(enemy) + "\n";
         }
         return b;
     }

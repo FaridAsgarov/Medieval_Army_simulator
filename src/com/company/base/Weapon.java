@@ -5,11 +5,13 @@ public class Weapon implements Weaponable{
     protected WeaponRange weapon_range;
     protected double weight_kg;
     protected int length_cm;
+    protected int damage;
 
-    public Weapon(WeaponRange weapon_range, double weight_kg, int length_cm){
+    public Weapon(WeaponRange weapon_range, double weight_kg, int length_cm, int damage){
         this.weapon_range = weapon_range;
         this.weight_kg = weight_kg;
         this.length_cm = length_cm;
+        this.damage = damage;
     }
 
     @Override
@@ -26,6 +28,10 @@ public class Weapon implements Weaponable{
     @Override
     public String defend() {
         throw new java.lang.UnsupportedOperationException("Not implemented yet.");
+    }
+
+    public int getDamage() {
+        return damage;
     }
 }
 

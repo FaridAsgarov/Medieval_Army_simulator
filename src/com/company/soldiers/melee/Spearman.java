@@ -29,8 +29,8 @@ public class Spearman extends Soldier {
     }
 
     @Override
-    public String attack() {
-        return super.attack();
+    public String attack(Soldier enemy) {
+        return super.attack(enemy);
     }
 
     public String throw_spear() {
@@ -46,7 +46,7 @@ public class Spearman extends Soldier {
             if (i <= 30) {
                 result = "Missed the target with the throw";
             } else {
-                result = "Succesfully threw the Spear at the target";
+                result = "Successfully threw the Spear at the target";
             }
             this.arsenal.removeActiveWeapon();
         }

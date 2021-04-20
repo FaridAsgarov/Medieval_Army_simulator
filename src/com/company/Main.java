@@ -2,6 +2,7 @@ package com.company;
 
 import com.company.base.BaseSquad;
 import com.company.soldiers.melee.Spearman;
+import com.company.soldiers.melee.Swordsman;
 import com.company.soldiers.ranged.Bowman;
 import com.company.soldiers.ranged.Crossbowman;
 import com.company.teams.EnglishSquad;
@@ -24,13 +25,19 @@ public class Main {
 //          System.out.println();
 //          System.out.println(legolas.toString());
 // Creating instance of Spearman class
-            Spearman spear_thrower = new Spearman("Spear thrower");
-            System.out.println(spear_thrower.attack());
-            System.out.println(spear_thrower.throw_spear());
-            System.out.println(spear_thrower.throw_spear());
-            System.out.println(spear_thrower.attack());
-            System.out.println(spear_thrower.throw_spear());
-            System.out.println(spear_thrower.defend());
+//            Spearman spear_thrower = new Spearman("Spear thrower");
+//            System.out.println(spear_thrower.attack());
+//            System.out.println(spear_thrower.throw_spear());
+//            System.out.println(spear_thrower.throw_spear());
+//            System.out.println(spear_thrower.attack());
+//            System.out.println(spear_thrower.throw_spear());
+//            System.out.println(spear_thrower.defend());
+
+        Swordsman a = new Swordsman("mr.A");
+        Swordsman b = new Swordsman("mr.B");
+        System.out.println(b.currentHP);
+        System.out.println(a.attack(b));
+        System.out.println(b.currentHP);
 
 //        BaseSquad base = new EnglishSquad();
 ////        System.out.println(base.Squad_defend());

@@ -6,7 +6,7 @@ import com.company.base.WeaponRange;
 public class Sword extends Weapon {
    public Sword() {
         super(
-               WeaponRange.MIDDLE_RANGE, 1.5, 100
+               WeaponRange.MIDDLE_RANGE, 1.5, 100,40
         );
     }
 

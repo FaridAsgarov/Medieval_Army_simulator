@@ -12,7 +12,9 @@ public class Bow extends DistanceWeapon {
                 2.26,
                 156,
                 3,
-                30);
+                30,
+                5
+                );
     }
 
     @Override

@@ -1,6 +1,7 @@
 package com.company.soldiers.ranged;
 
 import com.company.base.RangedSoldier;
+import com.company.base.Soldier;
 import com.company.soldiers.Rank;
 import com.company.weapons.ranged.Crossbow;
 
@@ -23,8 +24,8 @@ public class Crossbowman extends RangedSoldier {
     }
 
     @Override
-    public String attack() {
-        return super.attack();
+    public String attack(Soldier enemy) {
+        return super.attack(enemy);
     }
 
 

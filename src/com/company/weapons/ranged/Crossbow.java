@@ -8,7 +8,7 @@ import java.util.Random;
 public class Crossbow extends DistanceWeapon {
 
     public Crossbow() {
-        super(1, 2.26, 50, 5,10);
+        super(1, 2.26, 50, 5,10, 8);
     }
 
     @Override

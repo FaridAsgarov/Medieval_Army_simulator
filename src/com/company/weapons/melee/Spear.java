@@ -5,7 +5,7 @@ import com.company.base.WeaponRange;
 
 public class Spear extends Weapon{
    public Spear() {
-        super(WeaponRange.LONG_RANGE, 2.0, 228);
+        super(WeaponRange.LONG_RANGE, 2.0, 228, 20);
     }
 
     @Override

@@ -5,7 +5,7 @@ import com.company.base.WeaponRange;
 
 public class Mace extends Weapon{
     public Mace() {
-        super(WeaponRange.SHORT_MELEE_RANGE, 1.5, 65);
+        super(WeaponRange.SHORT_MELEE_RANGE, 1.5, 65,50);
     }
 
     @Override

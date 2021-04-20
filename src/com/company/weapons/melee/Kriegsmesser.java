@@ -5,7 +5,7 @@ import com.company.base.WeaponRange;
 
 public class Kriegsmesser extends Weapon{
     public Kriegsmesser() {
-        super(WeaponRange.MELEE_RANGE, 0.96, 75);
+        super(WeaponRange.MELEE_RANGE, 0.96, 75,30);
     }
 
     @Override

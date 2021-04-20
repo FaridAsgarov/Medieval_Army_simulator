@@ -1,5 +1,6 @@
 package com.company.base;
 
+import com.company.base.armors.SoldierArmorSet;
 import com.company.soldiers.Rank;
 
 
@@ -9,6 +10,8 @@ public class Soldier {
       Shield shield;
       protected int healthPoints;
       protected Arsenal arsenal;
+      public int currentHP;
+      protected SoldierArmorSet soldierArmorSet;
 
       public Soldier(Rank rank, String name, Shield shield, int healthPoints){
               this.rank = rank;
@@ -16,6 +19,8 @@ public class Soldier {
               this.shield = shield;
               this.healthPoints = healthPoints;
               this.arsenal = new Arsenal();
+              this.soldierArmorSet = new SoldierArmorSet();
+
       }
 
     @Override
@@ -39,9 +44,12 @@ public class Soldier {
               return result;
         }
 
-      public String attack(){
+      public String attack(Soldier enemy){
+              enemy.currentHP -= this.arsenal.getActiveWeapon().getDamage();
               return arsenal.getActiveWeapon().attack();
       }
 
-
+        public int getCurrentHP() {
+            return currentHP;
+        }
 }

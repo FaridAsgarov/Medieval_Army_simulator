@@ -12,16 +12,16 @@ import com.company.base.Shield;
 
 
 public class Swordsman extends Soldier {
-    protected SoldierArmorSet chainmail_armor_set;
     public Swordsman(String name) {
         super(Rank.KNIGHT, name, new Shield(50,10),100);
         Sword sword = new Sword();
         this.arsenal.addWeapon(sword);
         this.arsenal.setActiveWeapon(sword);
 
-        this.chainmail_armor_set = new SoldierArmorSet();
-        this.chainmail_armor_set.initializeInstance(new ChainmailHelm(), new СhainmailArmguards(),
+        this.soldierArmorSet.initializeInstance(new ChainmailHelm(), new СhainmailArmguards(),
                 new ChainmailLegGuards(), new ChainmailBodyArmor());
+        // Need to refactor in the future
+        this.currentHP = this.healthPoints + soldierArmorSet.TotalArmorPoints();
     }
 
     @Override
@@ -30,16 +30,16 @@ public class Swordsman extends Soldier {
     }
 
     @Override
-    public String attack() {
-        return super.attack();
+    public String attack(Soldier enemy) {
+        return super.attack(enemy);
     }
 
     public SoldierArmorSet getChainmail_armor_set() {
-        return chainmail_armor_set;
+        return this.soldierArmorSet;
     }
 
     @Override
     public String toString() {
-        return "Swordsman " + this.name + " has armor of: " + chainmail_armor_set.toString();
+        return "Swordsman " + this.name + " has armor of: " + this.soldierArmorSet.toString();
     }
 }

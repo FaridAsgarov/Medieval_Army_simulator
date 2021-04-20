@@ -33,6 +33,11 @@ public class SoldierArmorSet {
         return this.torso_armor_piece;
     }
 
+    public int TotalArmorPoints(){
+       return this.arms_armor_piece.material.getMaterialHP() + this.legs_armor_piece.material.getMaterialHP()
+                + this.head_armor_piece.material.getMaterialHP() + this.torso_armor_piece.material.getMaterialHP();
+    }
+
     public void initializeInstance(BaseHelm head_armor_piece, BaseArmguards arms_armor_piece,
                                    BaseLegGuards legs_armor_piece, BaseBodyArmor torso_armor_piece) {
         this.head_armor_piece = head_armor_piece;

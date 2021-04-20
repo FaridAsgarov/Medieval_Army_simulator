@@ -6,7 +6,7 @@ import java.util.Random;
 
 public class Dagger extends Weapon{
     public Dagger() {
-        super(WeaponRange.VERY_SHORT_MELEE_RANGE, 0.440, 32);
+        super(WeaponRange.VERY_SHORT_MELEE_RANGE, 0.440, 32,15);
     }
 
     @Override

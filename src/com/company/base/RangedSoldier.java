@@ -21,8 +21,8 @@ public class RangedSoldier extends Soldier {
     }
 
     @Override
-    public String attack(){
-        return super.attack();
+    public String attack(Soldier enemy){
+        return super.attack(enemy);
     }
 
 

@@ -23,4 +23,8 @@ public class Material {
         return material_hp;
     }
 
+    public int getMaterialHP(){
+        return this.material_hp;
+    }
+
 }
