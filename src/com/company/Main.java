@@ -43,9 +43,10 @@ public class Main {
         BaseSquad base = new EnglishSquad();
         BaseSquad base2 = new FrenchSquad();
 
-        for(int i=0; i<10; i++) {
+        for(int i=0; i<20; i++) {
             base.Squad_reload_ranged_weapons();
             System.out.println(base.Squad_attack(base2));
+            base2.RemoveTheDead();
         }
 ////        System.out.println(base.Squad_defend());
 //        System.out.println(base.Squad_reload_ranged_weapons());

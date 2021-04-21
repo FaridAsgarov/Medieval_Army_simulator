@@ -39,6 +39,14 @@ public class BaseSquad {
         return result;
     }
 
+    public void RemoveTheDead(){
+        for (int i=0; i<squad.size(); i++) {
+            if(squad.get(i).getAliveStatus() == false) {
+                squad.remove(squad.get(i));
+            }
+        }
+    }
+
     public int Num_of_alive_soldiers(){
         int numOfAliveSoldiers = squad.size();
             for (Soldier soldier : squad) {
@@ -60,7 +68,7 @@ public class BaseSquad {
     public String Squad_attack(BaseSquad enemySquad) {
         String tmp = "";
 
-        for(int i=0; i<squad.size(); i++){
+        for(int i=0; i<enemySquad.Num_of_alive_soldiers(); i++){
             tmp +=  Return_soldier_by_index(i).attack(enemySquad.Return_soldier_by_index(i)) + "\n";
         }
 
