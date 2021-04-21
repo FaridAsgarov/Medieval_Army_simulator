@@ -32,5 +32,9 @@ public class DistanceWeapon extends Weapon {
         this.arrow_num = this.max_arrow_num;
         return "reloaded ranged weapon, it took " + this.reload_time_secs + " secs";
     }
+
+    public int getArrow_num() {
+        return arrow_num;
+    }
 }
 

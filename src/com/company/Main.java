@@ -6,6 +6,7 @@ import com.company.soldiers.melee.Swordsman;
 import com.company.soldiers.ranged.Bowman;
 import com.company.soldiers.ranged.Crossbowman;
 import com.company.teams.EnglishSquad;
+import com.company.teams.FrenchSquad;
 
 public class Main {
 
@@ -33,18 +34,25 @@ public class Main {
 //            System.out.println(spear_thrower.throw_spear());
 //            System.out.println(spear_thrower.defend());
 
-        Swordsman a = new Swordsman("mr.A");
-        Swordsman b = new Swordsman("mr.B");
-        System.out.println(b.currentHP);
-        System.out.println(a.attack(b));
-        System.out.println(b.currentHP);
+//        Swordsman a = new Swordsman("mr.A");
+//        Swordsman b = new Swordsman("mr.B");
+//        System.out.println("enemy current HP starts at " + b.currentHP + " HP");
+//        System.out.println(spear_thrower.throw_spear(b));
+//        System.out.println(spear_thrower.attack(b));
 
-//        BaseSquad base = new EnglishSquad();
+        BaseSquad base = new EnglishSquad();
+        BaseSquad base2 = new FrenchSquad();
+
+        for(int i=0; i<10; i++) {
+            base.Squad_reload_ranged_weapons();
+            System.out.println(base.Squad_attack(base2));
+        }
 ////        System.out.println(base.Squad_defend());
 //        System.out.println(base.Squad_reload_ranged_weapons());
 //        System.out.println();
 //        System.out.println(base.Squad_attack());
 ////        System.out.println(base.Squad_Raise_Shields());
+
 
     }
 }

@@ -22,6 +22,14 @@ public class RangedSoldier extends Soldier {
 
     @Override
     public String attack(Soldier enemy){
+        if(this.arsenal.getActiveWeapon() instanceof DistanceWeapon){
+            if(((DistanceWeapon) this.arsenal.getActiveWeapon()).getArrow_num() > 0){
+                return super.attack(enemy);
+            }
+            else{
+                return "no arrows, so attack is not possible";
+            }
+        }
         return super.attack(enemy);
     }
 

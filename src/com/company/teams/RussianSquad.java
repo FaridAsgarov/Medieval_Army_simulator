@@ -17,11 +17,11 @@ public class RussianSquad extends BaseSquad {
         this.Add_Soldier(new Spearman("Russian_Spearman"));
         this.Add_Soldier(new Swordsman("Russian_Swordsman"));
         this.Add_Soldier(new Bowman("Russian_Bowman"));
-        this.Add_Soldier(new Crossbowman("Russian_Crossbow_man"));
+        this.Add_Soldier(new Crossbowman("Russian_Crossbowman"));
         this.Add_Soldier(new Spearman("Russian_Spearman_2"));
         this.Add_Soldier(new Swordsman("Russian_Swordsman_2"));
         this.Add_Soldier(new Bowman("Russian_Bowman_2"));
-        this.Add_Soldier(new Crossbowman("Russian_Crossbow_man_2"));
+        this.Add_Soldier(new Crossbowman("Russian_Crossbowman_2"));
         this.commander_index = 3;
     }
 

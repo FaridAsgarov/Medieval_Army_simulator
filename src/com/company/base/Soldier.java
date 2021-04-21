@@ -21,6 +21,7 @@ public class Soldier {
               this.arsenal = new Arsenal();
               this.soldierArmorSet = new SoldierArmorSet();
 
+
       }
 
     @Override
@@ -46,10 +47,18 @@ public class Soldier {
 
       public String attack(Soldier enemy){
               enemy.currentHP -= this.arsenal.getActiveWeapon().getDamage();
-              return arsenal.getActiveWeapon().attack();
+              return arsenal.getActiveWeapon().attack() + ", enemy health is at: " + enemy.currentHP +" HP";
       }
 
         public int getCurrentHP() {
             return currentHP;
+        }
+
+        public boolean getAliveStatus(){
+              boolean aliveStatus = true;
+                  if(this.currentHP <= 0) {
+                      aliveStatus = false;
+                    }
+              return aliveStatus;
         }
 }

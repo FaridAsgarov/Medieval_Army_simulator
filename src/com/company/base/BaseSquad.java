@@ -7,7 +7,9 @@ public class BaseSquad {
     protected int max_num_soldiers;
     protected int commander_index;
 
-    ArrayList<Soldier> squad;
+    protected ArrayList<Soldier> squad;
+
+
 
     public BaseSquad(String squad_name, int max_num_soldiers, int commander_index, ArrayList<Soldier> squad) {
         this.squad_name = squad_name;
@@ -30,20 +32,39 @@ public class BaseSquad {
 
     @Override
     public String toString() {
-        String result = " ";
+        String result = "";
         for (Soldier soldier : squad) {
             result += soldier.toString() + "\n";
         }
         return result;
     }
 
+    public int Num_of_alive_soldiers(){
+        int numOfAliveSoldiers = squad.size();
+            for (Soldier soldier : squad) {
+                if(soldier.getAliveStatus() == false){
+                    numOfAliveSoldiers--;
+                }
+            }
+        return numOfAliveSoldiers;
+    }
 
-    public String Squad_attack(Soldier enemy) {
-        String b = " ";
-        for (Soldier soldier : squad) {
-            b += soldier.attack(enemy) + "\n";
+    public Soldier Return_soldier_by_index(int soldierIndex){
+        if(soldierIndex >= 0 && soldierIndex < squad.size()){
+            return squad.get(soldierIndex);
         }
-        return b;
+        return null;
+    }
+
+
+    public String Squad_attack(BaseSquad enemySquad) {
+        String tmp = "";
+
+        for(int i=0; i<squad.size(); i++){
+            tmp +=  Return_soldier_by_index(i).attack(enemySquad.Return_soldier_by_index(i)) + "\n";
+        }
+
+        return tmp;
     }
 
     public String Squad_defend() {

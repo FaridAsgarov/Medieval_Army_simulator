@@ -1,5 +1,9 @@
 package com.company.soldiers.melee;
 
+import com.company.armor_category.arms.LeatherArmguards;
+import com.company.armor_category.helms.LeatherHelm;
+import com.company.armor_category.legs.LeatherLegGuards;
+import com.company.armor_category.torso.LeatherBodyArmor;
 import com.company.base.Soldier;
 import com.company.soldiers.Rank;
 import com.company.weapons.melee.Spear;
@@ -16,11 +20,16 @@ public class Spearman extends Soldier {
         this.arsenal.addWeapon(spear);
         this.arsenal.addWeapon(new Sword());
         this.arsenal.setActiveWeapon(spear);
+
+        this.soldierArmorSet.initializeInstance(new LeatherHelm(), new LeatherArmguards(),
+                new LeatherLegGuards(), new LeatherBodyArmor());
+
+        this.currentHP = this.healthPoints + soldierArmorSet.TotalArmorPoints();
     }
 
     @Override
     public String toString() {
-        return super.toString();
+        return "Spearman " + this.name + " has armor of: " + this.soldierArmorSet.toString();
     }
 
     @Override
@@ -33,7 +42,7 @@ public class Spearman extends Soldier {
         return super.attack(enemy);
     }
 
-    public String throw_spear() {
+    public String throw_spear(Soldier enemy) {
         String result;
         if (this.arsenal.getActiveWeapon().getClass().getName().equals(Spear.class.getName())) {
             int min = 0;
@@ -46,7 +55,8 @@ public class Spearman extends Soldier {
             if (i <= 30) {
                 result = "Missed the target with the throw";
             } else {
-                result = "Successfully threw the Spear at the target";
+                enemy.currentHP -= this.arsenal.getActiveWeapon().getDamage();
+                result = "Successfully threw the Spear at the target, enemy health is at: " + enemy.currentHP +" HP";
             }
             this.arsenal.removeActiveWeapon();
         }

@@ -17,11 +17,11 @@ public class FrenchSquad extends BaseSquad {
         this.Add_Soldier(new Spearman("French_Spearman"));
         this.Add_Soldier(new Swordsman("French_Swordsman"));
         this.Add_Soldier(new Bowman("French_Bowman"));
-        this.Add_Soldier(new Crossbowman("French_Crossbow_man"));
+        this.Add_Soldier(new Crossbowman("French_Crossbowman"));
         this.Add_Soldier(new Spearman("French_Spearman_2"));
         this.Add_Soldier(new Swordsman("French_Swordsman_2"));
         this.Add_Soldier(new Bowman("French_Bowman_2"));
-        this.Add_Soldier(new Crossbowman("French_Crossbow_man_2"));
+        this.Add_Soldier(new Crossbowman("French_Crossbowman_2"));
         this.commander_index = 5;
     }
 

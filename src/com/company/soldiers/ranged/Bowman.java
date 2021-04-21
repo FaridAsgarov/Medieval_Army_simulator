@@ -22,6 +22,8 @@ public class Bowman extends RangedSoldier {
 
         this.soldierArmorSet.initializeInstance(new LeatherHelm(), new LeatherArmguards(),
                 new LeatherLegGuards(), new LeatherBodyArmor());
+
+        this.currentHP = this.healthPoints + soldierArmorSet.TotalArmorPoints();
     }
 
     @Override
