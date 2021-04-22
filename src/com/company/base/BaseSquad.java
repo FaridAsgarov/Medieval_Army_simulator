@@ -65,11 +65,26 @@ public class BaseSquad {
     }
 
 
-    public String Squad_attack(BaseSquad enemySquad) {
+    public String Squad_attack_another_squad(BaseSquad enemySquad) {
         String tmp = "";
 
         for(int i=0; i<enemySquad.Num_of_alive_soldiers(); i++){
             tmp +=  Return_soldier_by_index(i).attack(enemySquad.Return_soldier_by_index(i)) + "\n";
+        }
+
+        return tmp;
+    }
+
+    public String Squad_attack_one_enemy(Soldier enemy){
+        String tmp = "";
+
+        for(Soldier soldier: squad){
+            if(enemy.currentHP > 0){
+               tmp += soldier.attack(enemy) + "\n";
+            }
+            else {
+                break;
+            }
         }
 
         return tmp;

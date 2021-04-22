@@ -41,12 +41,17 @@ public class Main {
 //        System.out.println(spear_thrower.attack(b));
 
         BaseSquad base = new EnglishSquad();
-        BaseSquad base2 = new FrenchSquad();
+//        BaseSquad base2 = new FrenchSquad();
 
-        for(int i=0; i<20; i++) {
-            base.Squad_reload_ranged_weapons();
-            System.out.println(base.Squad_attack(base2));
-            base2.RemoveTheDead();
+        Spearman french_spearman = new Spearman("french_spearman");
+
+
+        for(int i=0; i<10; i++) {
+            if(french_spearman.currentHP > 0){
+                base.Squad_reload_ranged_weapons();
+                System.out.println(base.Squad_attack_one_enemy(french_spearman));
+            }
+//            base2.RemoveTheDead();
         }
 ////        System.out.println(base.Squad_defend());
 //        System.out.println(base.Squad_reload_ranged_weapons());

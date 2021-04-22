@@ -46,8 +46,16 @@ public class Soldier {
         }
 
       public String attack(Soldier enemy){
+          if(enemy.currentHP>0) {
               enemy.currentHP -= this.arsenal.getActiveWeapon().getDamage();
-              return arsenal.getActiveWeapon().attack() + ", enemy health is at: " + enemy.currentHP +" HP";
+
+              if(enemy.currentHP<0){
+                  enemy.currentHP = 0;
+              }
+
+              return arsenal.getActiveWeapon().attack() + ", enemy health is at: " + enemy.currentHP + " HP";
+          }
+          return "Enemy already dead, no need to attack";
       }
 
         public int getCurrentHP() {
