@@ -5,10 +5,10 @@ import com.company.base.armors.ArmorBodypart;
 import com.company.base.armors.materials.Material;
 import com.company.base.armors.materials.MaterialQuality;
 
-public class LeatherBodyArmor extends BaseBodyArmor {
-    public LeatherBodyArmor() {
+public class ClothBodyArmor extends BaseBodyArmor {
+    public ClothBodyArmor() {
         super(ArmorBodypart.TORSO,
-                new Material(MaterialQuality.LEATHER,30,1.2, 100));
+                new Material(MaterialQuality.CLOTH,8,0.5, 100));
     }
 
     @Override

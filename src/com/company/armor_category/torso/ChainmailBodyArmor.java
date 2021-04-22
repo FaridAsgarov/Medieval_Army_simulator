@@ -7,11 +7,12 @@ import com.company.base.armors.materials.MaterialQuality;
 
 public class ChainmailBodyArmor extends BaseBodyArmor {
     public ChainmailBodyArmor() {
-        super(ArmorBodypart.TORSO, new Material(MaterialQuality.CHAINMAIL,50,1.5, 100));
+        super(ArmorBodypart.TORSO,
+                new Material(MaterialQuality.CHAINMAIL,60,1.5, 100));
     }
 
     @Override
     public String toString() {
-        return "Body Armor, protects the torso, it's " + material.toString();
+        return "Body Armor, it protects the torso, it's " + material.toString();
     }
 }

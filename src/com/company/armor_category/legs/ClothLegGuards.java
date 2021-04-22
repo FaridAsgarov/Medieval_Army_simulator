@@ -5,10 +5,10 @@ import com.company.base.armors.ArmorBodypart;
 import com.company.base.armors.materials.Material;
 import com.company.base.armors.materials.MaterialQuality;
 
-public class ChainmailLegGuards extends BaseLegGuards {
-    public ChainmailLegGuards(){
+public class ClothLegGuards extends BaseLegGuards {
+    public ClothLegGuards(){
         super(ArmorBodypart.LEGS,
-                new Material(MaterialQuality.CHAINMAIL,20,1.5, 100));
+                new Material(MaterialQuality.CLOTH,2,0.5, 100));
     }
 
     @Override
@@ -16,4 +16,3 @@ public class ChainmailLegGuards extends BaseLegGuards {
         return "LegGuards, they protect the legs, they're " + material.toString();
     }
 }
-

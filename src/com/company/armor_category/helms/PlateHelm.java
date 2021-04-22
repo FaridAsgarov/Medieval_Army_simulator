@@ -5,9 +5,11 @@ import com.company.base.armors.ArmorBodypart;
 import com.company.base.armors.materials.Material;
 import com.company.base.armors.materials.MaterialQuality;
 
-public class LeatherHelm extends BaseHelm {
-    public LeatherHelm() {
-        super(ArmorBodypart.HEAD, new Material(MaterialQuality.LEATHER,15,1.2, 100));
+public class PlateHelm extends BaseHelm {
+    public PlateHelm() {
+        super(ArmorBodypart.HEAD,
+                new Material(MaterialQuality.PLATE,40,2.0, 100));
+
     }
 
     @Override
@@ -15,4 +17,3 @@ public class LeatherHelm extends BaseHelm {
         return "Helm, it protects the head, it's " + material.toString();
     }
 }
-

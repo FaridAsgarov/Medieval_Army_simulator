@@ -5,10 +5,10 @@ import com.company.base.armors.ArmorBodypart;
 import com.company.base.armors.materials.Material;
 import com.company.base.armors.materials.MaterialQuality;
 
-public class LeatherArmguards extends BaseArmguards {
-    public LeatherArmguards() {
+public class ClothArmguards extends BaseArmguards {
+    public ClothArmguards() {
         super(ArmorBodypart.ARMS,
-                new Material(MaterialQuality.LEATHER,10,1.2, 100));
+                new Material(MaterialQuality.CLOTH,2,0.5, 100));
     }
 
     @Override
@@ -16,4 +16,3 @@ public class LeatherArmguards extends BaseArmguards {
         return "Armguards, they protect the arms, they're " + material.toString();
     }
 }
-

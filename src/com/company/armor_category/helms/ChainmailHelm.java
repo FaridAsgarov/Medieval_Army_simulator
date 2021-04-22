@@ -14,6 +14,6 @@ public class ChainmailHelm extends BaseHelm {
 
     @Override
     public String toString() {
-        return "Helm, protects the head, it's " + material.toString();
+        return "Helm, it protects the head, it's " + material.toString();
     }
 }

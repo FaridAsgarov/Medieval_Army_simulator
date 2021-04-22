@@ -8,12 +8,13 @@ import com.company.base.armors.materials.MaterialQuality;
 
 public class СhainmailArmguards extends BaseArmguards {
     public СhainmailArmguards() {
-        super(ArmorBodypart.ARMS, new Material(MaterialQuality.CHAINMAIL,20,1.5, 100));
+        super(ArmorBodypart.ARMS,
+                new Material(MaterialQuality.CHAINMAIL,20,1.5, 100));
     }
 
     @Override
     public String toString() {
-        return "Armguards, protects the arms, they're " + material.toString();
+        return "Armguards, they protect the arms, they're " + material.toString();
     }
 }
 
