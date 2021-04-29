@@ -5,6 +5,7 @@ import com.company.armor_category.helms.LeatherHelm;
 import com.company.armor_category.legs.LeatherLegGuards;
 import com.company.armor_category.torso.LeatherBodyArmor;
 import com.company.base.Soldier;
+import com.company.shields.Buckler;
 import com.company.soldiers.Rank;
 import com.company.weapons.melee.Spear;
 import com.company.weapons.melee.Sword;
@@ -15,7 +16,7 @@ import java.util.Random;
 public class Spearman extends Soldier {
 
     public Spearman(String name) {
-        super(Rank.PEASANT, name, null,100);
+        super(Rank.PEASANT, name, new Buckler(),100);
         Spear spear = new Spear();
         this.arsenal.addWeapon(spear);
         this.arsenal.addWeapon(new Sword());

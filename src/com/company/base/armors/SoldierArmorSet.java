@@ -38,8 +38,8 @@ public class SoldierArmorSet {
                 + this.head_armor_piece.material.getMaterialHP() + this.torso_armor_piece.material.getMaterialHP();
     }
 
-    public void initializeInstance(BaseHelm head_armor_piece, BaseArmguards arms_armor_piece,
-                                   BaseLegGuards legs_armor_piece, BaseBodyArmor torso_armor_piece) {
+    public Object initializeInstance(BaseHelm head_armor_piece, BaseArmguards arms_armor_piece,
+                                     BaseLegGuards legs_armor_piece, BaseBodyArmor torso_armor_piece) {
         this.head_armor_piece = head_armor_piece;
         this.arms_armor_piece = arms_armor_piece;
         this.legs_armor_piece = legs_armor_piece;
@@ -69,5 +69,6 @@ public class SoldierArmorSet {
             }
         }
 
+        return null;
     }
 }

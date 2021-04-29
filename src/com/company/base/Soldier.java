@@ -11,7 +11,7 @@ public class Soldier {
       protected int healthPoints;
       protected Arsenal arsenal;
       public int currentHP;
-      protected SoldierArmorSet soldierArmorSet;
+      public SoldierArmorSet soldierArmorSet;
 
       public Soldier(Rank rank, String name, Shield shield, int healthPoints){
               this.rank = rank;
@@ -46,16 +46,19 @@ public class Soldier {
         }
 
       public String attack(Soldier enemy){
+          String result = "";
           if(enemy.currentHP>0) {
               enemy.currentHP -= this.arsenal.getActiveWeapon().getDamage();
 
               if(enemy.currentHP<0){
                   enemy.currentHP = 0;
               }
-
-              return arsenal.getActiveWeapon().attack() + ", enemy health is at: " + enemy.currentHP + " HP";
+             result = arsenal.getActiveWeapon().attack() + ", enemy health is at: " + enemy.currentHP + " HP";
           }
-          return "Enemy already dead, no need to attack";
+          else {
+              result = "Enemy already dead, no need to attack";
+          }
+          return result;
       }
 
         public int getCurrentHP() {
